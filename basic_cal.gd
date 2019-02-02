@@ -1,3 +1,4 @@
+extends Node
 # testing script
 
 enum DayOfWeek {MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY}

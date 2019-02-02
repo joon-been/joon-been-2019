@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://basic_cal.gd" type="Script" id=1]
-[ext_resource path="res://cubefriend.dae" type="PackedScene" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 
 [node name="basic_cal_n" type="Node" index="0"]
 
@@ -41,7 +41,7 @@ directional_shadow_max_distance = 200.0
 
 [node name="Camera" type="Camera" parent="Spatial" index="1"]
 
-transform = Transform( -4.21434e-008, -0.265432, 0.96413, -1.16024e-008, 0.96413, 0.265432, -1, 0, -4.37114e-008, 6.36828, 2.46041, 0 )
+transform = Transform( -1, 2.26267e-008, -8.44439e-008, 0, 0.965926, 0.258819, 8.74228e-008, 0.258819, -0.965926, 0, 4, -10 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = null
@@ -69,6 +69,6 @@ capture_cell_size = 0.5
 image_path = "."
 light_data = null
 
-[node name="Scene Root" parent="Spatial" index="3" instance=ExtResource( 2 )]
+[node name="Player" parent="Spatial" index="3" instance=ExtResource( 2 )]
 
 

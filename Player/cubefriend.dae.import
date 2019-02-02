@@ -2,17 +2,17 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/cubefriend.dae-88bae6ce46e1d34134fa662fcb6b41e1.scn"
+path="res://.import/cubefriend.dae-ef2b879d5fd30c4db1fd90e64e99257a.scn"
 
 [deps]
 
-source_file="res://cubefriend.dae"
-dest_files=[ "res://.import/cubefriend.dae-88bae6ce46e1d34134fa662fcb6b41e1.scn" ]
+source_file="res://Player/cubefriend.dae"
+dest_files=[ "res://.import/cubefriend.dae-ef2b879d5fd30c4db1fd90e64e99257a.scn" ]
 
 [params]
 
 nodes/root_type="Spatial"
-nodes/root_name="Scene Root"
+nodes/root_name="Cubefriend"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
@@ -26,7 +26,7 @@ meshes/light_baking=0
 meshes/lightmap_texel_size=0.1
 external_files/store_in_subdir=false
 animation/import=true
-animation/fps=15
+animation/fps=24.0
 animation/filter_script=""
 animation/storage=false
 animation/keep_custom_tracks=false
