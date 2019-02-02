@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Player/cubefriend.dae" type="PackedScene" id=1]
+
+[node name="Cubefriend" instance=ExtResource( 1 )]
+
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 0, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Cubefriend_Rig" parent="." index="0"]
+
+transform = Transform( -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0, 0, 1, 0, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimationPlayer" parent="." index="1"]
+
+autoplay = "cubefriend_idle-loop"
+_sections_unfolded = [ "Playback Options" ]
+
+
