@@ -62,12 +62,16 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Z Index" ]
 
-[node name="Panel" type="Panel" parent="." index="1"]
+[node name="Panel" type="Panel" parent="Camera2D" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -32.113
+margin_top = -32.9156
+margin_right = -32.113
+margin_bottom = -32.9156
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -76,16 +80,16 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Margin", "Mouse", "Rect" ]
 
-[node name="MarginContainer" type="MarginContainer" parent="." index="2"]
+[node name="MarginContainer" type="MarginContainer" parent="Camera2D" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 32.0
-margin_top = 32.0
-margin_right = -32.0
-margin_bottom = -32.0
+margin_left = -30.106
+margin_top = -29.4138
+margin_right = 37.894
+margin_bottom = 77.5862
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -98,7 +102,7 @@ custom_constants/margin_left = 32
 custom_constants/margin_bottom = 32
 _sections_unfolded = [ "Anchor", "Margin", "Size Flags" ]
 
-[node name="Main VBox" type="VBoxContainer" parent="MarginContainer" index="0"]
+[node name="Main VBox" type="VBoxContainer" parent="Camera2D/MarginContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -106,8 +110,8 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 32.0
 margin_top = 32.0
-margin_right = 928.0
-margin_bottom = 504.0
+margin_right = 100.0
+margin_bottom = 139.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -116,15 +120,13 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Main VBox" index="0"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Camera2D/MarginContainer/Main VBox" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 140.0
-margin_right = 896.0
-margin_bottom = 86.0
+margin_right = 68.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
@@ -145,15 +147,15 @@ selection_enabled = false
 override_selected_font_color = false
 _sections_unfolded = [ "Anchor", "Margin", "Size Flags", "custom_fonts" ]
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Main VBox" index="1"]
+[node name="MarginContainer" type="MarginContainer" parent="Camera2D/MarginContainer/Main VBox" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 100.0
-margin_right = 896.0
-margin_bottom = 440.0
+margin_top = 4.0
+margin_right = 68.0
+margin_bottom = 107.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -162,15 +164,15 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Button VBox" type="VBoxContainer" parent="MarginContainer/Main VBox/MarginContainer" index="0"]
+[node name="Button VBox" type="VBoxContainer" parent="Camera2D/MarginContainer/Main VBox/MarginContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 8.0
-margin_right = 896.0
-margin_bottom = 340.0
+margin_right = 68.0
+margin_bottom = 103.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -181,15 +183,14 @@ custom_constants/separation = 20
 alignment = 1
 _sections_unfolded = [ "Anchor", "Focus", "Margin", "Size Flags" ]
 
-[node name="Button" type="Button" parent="MarginContainer/Main VBox/MarginContainer/Button VBox" index="0"]
+[node name="Button" type="Button" parent="Camera2D/MarginContainer/Main VBox/MarginContainer/Button VBox" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 118.0
-margin_right = 888.0
-margin_bottom = 139.0
+margin_right = 60.0
+margin_bottom = 21.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -208,15 +209,15 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Size Flags", "custom_fonts" ]
 
-[node name="Button2" type="Button" parent="MarginContainer/Main VBox/MarginContainer/Button VBox" index="1"]
+[node name="Button2" type="Button" parent="Camera2D/MarginContainer/Main VBox/MarginContainer/Button VBox" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 159.0
-margin_right = 888.0
-margin_bottom = 180.0
+margin_top = 41.0
+margin_right = 60.0
+margin_bottom = 62.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -235,15 +236,15 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Size Flags", "custom_fonts" ]
 
-[node name="Button3" type="Button" parent="MarginContainer/Main VBox/MarginContainer/Button VBox" index="2"]
+[node name="Button3" type="Button" parent="Camera2D/MarginContainer/Main VBox/MarginContainer/Button VBox" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 200.0
-margin_right = 888.0
-margin_bottom = 221.0
+margin_top = 82.0
+margin_right = 60.0
+margin_bottom = 103.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -261,19 +262,5 @@ text = "Button"
 flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Size Flags", "custom_fonts" ]
-
-[node name="Container" type="Container" parent="." index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Anchor", "Margin", "Size Flags" ]
 
 

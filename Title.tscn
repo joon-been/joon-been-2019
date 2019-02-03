@@ -1,20 +1,19 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[sub_resource type="DynamicFontData" id=1]
+[ext_resource path="res://title_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/kiona_2/Kiona-Regular.ttf" type="DynamicFontData" id=2]
 
-hinting = 1
-font_path = "res://fonts/kiona_2/Kiona-Regular.ttf"
-_sections_unfolded = [ "Resource" ]
+[sub_resource type="DynamicFont" id=1]
 
-[sub_resource type="DynamicFont" id=2]
-
-size = 26
-use_mipmaps = false
-use_filter = false
-font_data = SubResource( 1 )
+size = 40
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="CenterContainer" type="CenterContainer" index="0"]
+[node name="Node" type="Node" index="0"]
+
+[node name="Control" type="Control" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -26,68 +25,158 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-use_top_left = false
-_sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Panel" type="Panel" parent="." index="0"]
+[node name="CanvasLayer" type="CanvasLayer" parent="Control" index="0"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/CanvasLayer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 20.0
-margin_right = -20.0
-margin_bottom = -20.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-size_flags_stretch_ratio = 8.68
-_sections_unfolded = [ "Visibility" ]
 
-[node name="Title" type="RichTextLabel" parent="Panel" index="0"]
+[node name="Panel" type="Panel" parent="Control/CanvasLayer/PanelContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1017.0
+margin_bottom = 593.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="top" type="Container" parent="Control/CanvasLayer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_bottom = 200.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/CanvasLayer/top" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 20.0
-margin_right = -20.0
-margin_bottom = -400.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 0
+size_flags_horizontal = 1
 size_flags_vertical = 1
-size_flags_stretch_ratio = 1.02
-custom_fonts/normal_font = SubResource( 2 )
+custom_constants/margin_right = 70
+custom_constants/margin_top = 70
+custom_constants/margin_left = 195
+custom_constants/margin_bottom = 40
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/CanvasLayer/top/MarginContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 195.0
+margin_top = 70.0
+margin_right = 954.0
+margin_bottom = 160.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = ExtResource( 1 )
 bbcode_enabled = false
-bbcode_text = "[size=\"7\"]JOON BEEN 2019![/size]
-"
+bbcode_text = ""
 visible_characters = -1
 percent_visible = 1.0
-meta_underlined = false
+meta_underlined = true
 tab_size = 4
 text = "JOON BEEN 2019"
 scroll_active = false
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
-_sections_unfolded = [ "Anchor", "Margin", "Theme", "custom_fonts" ]
+_sections_unfolded = [ "custom_fonts" ]
 
-[node name="TextureButton" type="TextureButton" parent="Panel" index="1"]
+[node name="bottom" type="Container" parent="Control/CanvasLayer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -400.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="buttons" type="Container" parent="Control/CanvasLayer/bottom" index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_right = 283.0
+margin_bottom = -84.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CanvasLayer/bottom/buttons" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="continuebutton" type="Button" parent="Control/CanvasLayer/bottom/buttons/VBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 283.0
+margin_bottom = 54.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -95,19 +184,25 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
+text = "Continue"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
 
-[node name="TextureButton2" type="TextureButton" parent="Panel" index="2"]
+[node name="playbutton" type="Button" parent="Control/CanvasLayer/bottom/buttons/VBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
+margin_top = 58.0
+margin_right = 283.0
+margin_bottom = 112.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -115,19 +210,25 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
+text = "Play"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
 
-[node name="TextureButton3" type="TextureButton" parent="Panel" index="3"]
+[node name="settingsbutton" type="Button" parent="Control/CanvasLayer/bottom/buttons/VBoxContainer" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
+margin_top = 116.0
+margin_right = 283.0
+margin_bottom = 170.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -135,19 +236,25 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
+text = "Settings"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
 
-[node name="TextureButton4" type="TextureButton" parent="Panel" index="4"]
+[node name="quitbutton" type="Button" parent="Control/CanvasLayer/bottom/buttons/VBoxContainer" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
+margin_top = 174.0
+margin_right = 283.0
+margin_bottom = 228.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -155,69 +262,14 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-
-[node name="TextureButton5" type="TextureButton" parent="Panel" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-
-[node name="TextureButton6" type="TextureButton" parent="Panel" index="6"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-
-[node name="TextureButton7" type="TextureButton" parent="Panel" index="7"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+text = "quit"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
 
 
