@@ -1,17 +1,20 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://title_dynamicfont.tres" type="DynamicFont" id=1]
-[ext_resource path="res://fonts/kiona_2/Kiona-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Title.gd" type="Script" id=1]
+[ext_resource path="res://title_dynamicfont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/kiona_2/Kiona-Regular.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 40
 use_mipmaps = true
 use_filter = true
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
+
+script = ExtResource( 1 )
 
 [node name="Control" type="Control" parent="." index="0"]
 
@@ -25,8 +28,9 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+_sections_unfolded = [ "Visibility" ]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Control" index="0"]
+[node name="title_canvas" type="CanvasLayer" parent="Control" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -34,7 +38,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="PanelContainer" type="PanelContainer" parent="Control/CanvasLayer" index="0"]
+[node name="PanelContainer" type="PanelContainer" parent="Control/title_canvas" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -47,7 +51,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="Panel" type="Panel" parent="Control/CanvasLayer/PanelContainer" index="0"]
+[node name="Panel" type="Panel" parent="Control/title_canvas/PanelContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -64,7 +68,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="top" type="Container" parent="Control/CanvasLayer" index="1"]
+[node name="top" type="Container" parent="Control/title_canvas" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -78,7 +82,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/CanvasLayer/top" index="0"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/title_canvas/top" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -96,7 +100,7 @@ custom_constants/margin_left = 195
 custom_constants/margin_bottom = 40
 _sections_unfolded = [ "custom_constants" ]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/CanvasLayer/top/MarginContainer" index="0"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/title_canvas/top/MarginContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -112,7 +116,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/normal_font = ExtResource( 1 )
+custom_fonts/normal_font = ExtResource( 2 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -126,7 +130,7 @@ selection_enabled = false
 override_selected_font_color = false
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="bottom" type="Container" parent="Control/CanvasLayer" index="2"]
+[node name="bottom" type="Container" parent="Control/title_canvas" index="2"]
 
 anchor_left = 0.0
 anchor_top = 1.0
@@ -140,7 +144,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="buttons" type="Container" parent="Control/CanvasLayer/bottom" index="0"]
+[node name="buttons" type="Container" parent="Control/title_canvas/bottom" index="0"]
 
 anchor_left = 0.5
 anchor_top = 0.0
@@ -155,7 +159,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/CanvasLayer/bottom/buttons" index="0"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/title_canvas/bottom/buttons" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -169,7 +173,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="continuebutton" type="Button" parent="Control/CanvasLayer/bottom/buttons/VBoxContainer" index="0"]
+[node name="continuebutton" type="Button" parent="Control/title_canvas/bottom/buttons/VBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -194,7 +198,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="playbutton" type="Button" parent="Control/CanvasLayer/bottom/buttons/VBoxContainer" index="1"]
+[node name="newbutton" type="Button" parent="Control/title_canvas/bottom/buttons/VBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -215,12 +219,12 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Play"
+text = "New"
 flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="settingsbutton" type="Button" parent="Control/CanvasLayer/bottom/buttons/VBoxContainer" index="2"]
+[node name="settingsbutton" type="Button" parent="Control/title_canvas/bottom/buttons/VBoxContainer" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -246,7 +250,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="quitbutton" type="Button" parent="Control/CanvasLayer/bottom/buttons/VBoxContainer" index="3"]
+[node name="quitbutton" type="Button" parent="Control/title_canvas/bottom/buttons/VBoxContainer" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -271,5 +275,7 @@ text = "quit"
 flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
+
+[connection signal="pressed" from="Control/title_canvas/bottom/buttons/VBoxContainer/newbutton" to="." method="_on_newbutton_pressed"]
 
 
