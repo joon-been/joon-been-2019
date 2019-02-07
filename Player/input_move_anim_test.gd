@@ -11,7 +11,8 @@ var animControl
 
 func _ready():
 	print("Move using WASD")
-	var animControl = get_node("Cubefriend/AnimationPlayer")
+	var animControl = get_node("Cubefriend/AnimationTreePlayer")
+	animControl.active = true
 	print(animControl)
 	pass
 
@@ -48,14 +49,23 @@ func _process(delta):
 	
 	## ANIMATION
 	
-	print(animControl)
+	var animControl = get_node("Cubefriend/AnimationTreePlayer") #scope problem needs to be fixed so this doesn't need to be called every frame
+	#print(animControl)
 	
 	if (animControl != null):
+		
+		if Input.is_key_pressed(KEY_E):
+			animControl.oneshot_node_start("interact_moving_trigger")
+		
 		if moving:
-			animControl.current_animation = "cubefriend_walk-loop"
-		elif Input.is_key_pressed(KEY_E):
-			animControl.current_animation = "cubefriend_interact"
+			animControl.blend2_node_set_amount("walk_blend",1)
 		else:
-			animControl.current_animation = "cubefriend_idle-loop"
+			animControl.blend2_node_set_amount("walk_blend",0)
+		
+		##print(animControl,animControl.active,animControl.blend2_node_get_amount("walk_blend"))
+		
 	
 	pass
+
+
+

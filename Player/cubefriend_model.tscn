@@ -4,7 +4,7 @@
 
 [node name="Cubefriend" instance=ExtResource( 1 )]
 
-transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 0, 0, 0 )
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 0, 0, 0 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Cubefriend_Rig" parent="." index="0"]
@@ -12,7 +12,60 @@ _sections_unfolded = [ "Transform" ]
 transform = Transform( 1.94707e-007, 1, 0, -1, 1.94707e-007, 0, 0, 0, 1, 0, 0, 0 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="AnimationPlayer" parent="." index="1"]
+[node name="AnimationTreePlayer" type="AnimationTreePlayer" parent="." index="1"]
+
+playback_process_mode = 1
+master_player = NodePath("../AnimationPlayer")
+base_path = NodePath("..")
+active = true
+data = {
+"active": true,
+"connections": [ "interact_moving_trigger", "out", 0, "idle_anim", "walk_blend", 0, "walk_anim", "walk_blend", 1, "walk_blend", "interact_moving_trigger", 0, "interact_anim", "interact_moving_trigger", 1 ],
+"master": NodePath("../AnimationPlayer"),
+"nodes": [ {
+"id": "out",
+"position": Vector2( 1021, 96 ),
+"type": "output"
+}, {
+"filter": [  ],
+"from": "cubefriend_walk-loop",
+"id": "walk_anim",
+"position": Vector2( 140, 216 ),
+"type": "animation"
+}, {
+"filter": [  ],
+"from": "cubefriend_interact",
+"id": "interact_anim",
+"position": Vector2( 453, 375 ),
+"type": "animation"
+}, {
+"filter": [  ],
+"from": "cubefriend_idle-loop",
+"id": "idle_anim",
+"position": Vector2( 132, 94 ),
+"type": "animation"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "walk_blend",
+"position": Vector2( 453, 107 ),
+"type": "blend2"
+}, {
+"autorestart": true,
+"autorestart_delay": 1.0,
+"autorestart_random_delay": 0.807843,
+"fade_in": 0.25,
+"fade_out": 0.15,
+"filter": [ NodePath("Cubefriend_Rig/Skeleton:body"), NodePath("Cubefriend_Rig/Skeleton:leg.R"), NodePath("Cubefriend_Rig/Skeleton:leg.L") ],
+"id": "interact_moving_trigger",
+"mix": false,
+"position": Vector2( 696, 154 ),
+"type": "oneshot"
+} ]
+}
+_sections_unfolded = [ "Playback" ]
+
+[node name="AnimationPlayer" parent="." index="2"]
 
 autoplay = "cubefriend_idle-loop"
 playback_default_blend_time = 0.25
