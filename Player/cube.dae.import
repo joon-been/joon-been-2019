@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/eyecube.dae-9d49693e61af1b5a1b0dbcf35ac06883.scn"
+path="res://.import/cube.dae-4e09ff0da5286cdb151187284bfb3245.scn"
 
 [deps]
 
-source_file="res://eyecube.dae"
-dest_files=[ "res://.import/eyecube.dae-9d49693e61af1b5a1b0dbcf35ac06883.scn" ]
+source_file="res://Player/cube.dae"
+dest_files=[ "res://.import/cube.dae-4e09ff0da5286cdb151187284bfb3245.scn" ]
 
 [params]
 

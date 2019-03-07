@@ -14,7 +14,6 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
-
 func _on_newbutton_pressed():
-	get_tree().change_scene_to(load("res://PC.tscn"))
+	get_tree().change_scene_to(load("res://TEST.tscn"))
 	pass # replace with function body

@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://message.gd" type="Script" id=1]
+[ext_resource path="res://fonts/character-dialogue_dynamicfont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/dialogue_dynamicfont.tres" type="DynamicFont" id=3]
 
-[node name="Node" type="Node" index="0"]
+[node name="MESSAGE" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -117,12 +119,14 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
 text = "character name"
 align = 1
 uppercase = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="dialogue label container" type="Container" parent="CanvasLayer/Control/MarginContainer/picture space container" index="1"]
 
@@ -150,11 +154,14 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 autowrap = true
+clip_text = true
 percent_visible = 1.0
 lines_skipped = 0
-max_lines_visible = -1
+max_lines_visible = 4
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="next button" type="Button" parent="CanvasLayer/Control" index="2"]
 

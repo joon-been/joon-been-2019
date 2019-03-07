@@ -5,10 +5,9 @@ extends Node
 # var b = "textvar"
 
 var title_scene
-var map_scene
 
 func _ready():
-	title_scene = load("res://Title.tscn").instance()
+	title_scene = load("res://TITLE.tscn").instance()
 	add_child(title_scene)
 	pass
 

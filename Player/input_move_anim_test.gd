@@ -39,6 +39,15 @@ func _process(delta):
 	else:
 		move_vec.x = 0
 	
+	# assorted UI functions to be relocated?
+	
+	if Input.is_key_pressed(KEY_PERIOD):
+		var map = load("res://MAP.tscn").instance()
+		# functions to call on map ?
+		add_child(map)
+	
+	# end assorted UI functions
+	
 	look_vec = Vector3 ( lerp(look_vec.x,translation.x+(move_vec.x*move_speed),rotate_speed) , translation.y , lerp(look_vec.z,translation.z+(move_vec.z*move_speed),rotate_speed) )
 	if (look_vec != translation): look_at(look_vec,Vector3(0,1,0))
 	

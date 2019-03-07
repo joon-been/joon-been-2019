@@ -2,18 +2,18 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/ground.dae-9ac9bc7a5009ffe2cd66f5755ced7f0a.scn"
+path="res://.import/eyecube.dae-78367e3e043ada7cf517e5c6e5d87ded.scn"
 
 [deps]
 
-source_file="res://ground.dae"
-dest_files=[ "res://.import/ground.dae-9ac9bc7a5009ffe2cd66f5755ced7f0a.scn" ]
+source_file="res://Player/eyecube.dae"
+dest_files=[ "res://.import/eyecube.dae-78367e3e043ada7cf517e5c6e5d87ded.scn" ]
 
 [params]
 
 nodes/root_type="Spatial"
-nodes/root_name="Ground"
-nodes/root_scale=2.0
+nodes/root_name="Scene Root"
+nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
 materials/location=1
@@ -25,7 +25,7 @@ meshes/storage=0
 meshes/light_baking=0
 meshes/lightmap_texel_size=0.1
 external_files/store_in_subdir=false
-animation/import=false
+animation/import=true
 animation/fps=15
 animation/filter_script=""
 animation/storage=false

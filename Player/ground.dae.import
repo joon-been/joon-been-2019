@@ -2,18 +2,18 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/cube.dae-69d0164dbd6a47e084b79dd55bc32faa.scn"
+path="res://.import/ground.dae-0328db08e023747c7f51b7427a0ad65d.scn"
 
 [deps]
 
-source_file="res://cube.dae"
-dest_files=[ "res://.import/cube.dae-69d0164dbd6a47e084b79dd55bc32faa.scn" ]
+source_file="res://Player/ground.dae"
+dest_files=[ "res://.import/ground.dae-0328db08e023747c7f51b7427a0ad65d.scn" ]
 
 [params]
 
 nodes/root_type="Spatial"
-nodes/root_name="Scene Root"
-nodes/root_scale=1.0
+nodes/root_name="Ground"
+nodes/root_scale=2.0
 nodes/custom_script=""
 nodes/storage=0
 materials/location=1
@@ -25,7 +25,7 @@ meshes/storage=0
 meshes/light_baking=0
 meshes/lightmap_texel_size=0.1
 external_files/store_in_subdir=false
-animation/import=true
+animation/import=false
 animation/fps=15
 animation/filter_script=""
 animation/storage=false

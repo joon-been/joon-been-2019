@@ -5,7 +5,11 @@ extends Node
 # var b = "textvar"
 
 func _ready():
-	add_child(load("res://message.tscn").instance())
+	var test_time = load("res://TIME.tscn").instance()
+	add_child(test_time)
+	var test_dialogue = load("res://MESSAGE.tscn").instance()
+	test_dialogue.say("Date Time", "There's a print function, you dingus")
+	add_child(test_dialogue)
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	pass
